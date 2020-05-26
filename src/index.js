@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './styles.module.css'
+import FormItem from './FormItem'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+export const ReactFormMaker = ({ text }) => {
+  return <div>Example Component: {text}</div>
 }
