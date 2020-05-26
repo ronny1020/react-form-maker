@@ -1,7 +1,7 @@
 {
   "name": "react-form-maker",
   "version": "0.0.1",
-  "description": "make a react form faster",
+  "description": "make a react form faster by object",
   "author": "ronny1020",
   "license": "MIT",
   "repository": "ronny1020/react-form-maker",
