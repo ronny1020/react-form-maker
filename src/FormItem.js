@@ -1,44 +1,54 @@
 import React from 'react'
 
 export const FormItem = (props) => {
-  const spec = props.formItemSpec
+  const attributes = props.formItemAttributes
   const formClassName = props.formClassName
   const formStyle = props.formStyle
 
-  const type = spec.type ? spec.type : 'text'
-  const name = spec.name ? spec.name : spec.id
-  const label = spec.label ? spec.label : spec.id
+  if (attributes.type === undefined) attributes.type = 'text'
+  if (attributes.label === undefined) attributes.label = attributes.id
 
-  // className or style in spec have priority than in the formClassName or formStyle
-  const formGroupClassName = spec.formGroupClassName
-    ? spec.formGroupClassName
+  // className or style in attributes have priority than in the formClassName or formStyle
+  const formGroupClassName = attributes.formGroupClassName
+    ? attributes.formGroupClassName
     : formClassName.formGroupClassName
-  const formGroupStyle = spec.formGroupStyle
-    ? spec.formGroupStyle
+  const formGroupStyle = attributes.formGroupStyle
+    ? attributes.formGroupStyle
     : formStyle.formGroupStyle
 
-  const labelClassName = spec.labelClassName
-    ? spec.labelClassName
+  const labelClassName = attributes.labelClassName
+    ? attributes.labelClassName
     : formClassName.labelClassName
-  const labelStyle = spec.labelStyle ? spec.labelStyle : formStyle.labelStyle
+  const labelStyle = attributes.labelStyle
+    ? attributes.labelStyle
+    : formStyle.labelStyle
 
-  const inputClassName = spec.inputClassName
-    ? spec.inputClassName
-    : formClassName.inputClassName
-  const inputStyle = spec.inputStyle ? spec.inputStyle : formStyle.inputStyle
+  let inputClassName
+  if (attributes.inputClassName === undefined) {
+    inputClassName = formClassName.inputClassName
+  } else {
+    inputClassName = attributes.inputClassName
+    delete attributes.inputClassName
+  }
+
+  let inputStyle
+  if (attributes.inputStyle === undefined) {
+    inputStyle = formClassName.inputStyle
+  } else {
+    inputStyle = attributes.inputStyle
+    delete attributes.inputStyle
+  }
 
   return (
     <div className={formGroupClassName} style={formGroupStyle}>
-      <label className={labelClassName} style={labelStyle} htmlFor={spec.id}>
-        {label}
+      <label
+        className={labelClassName}
+        style={labelStyle}
+        htmlFor={attributes.id}
+      >
+        {attributes.label}
       </label>
-      <input
-        className={inputClassName}
-        style={inputStyle}
-        type={type}
-        id={spec.id}
-        name={name}
-      />
+      <input {...attributes} className={inputClassName} style={inputStyle} />
     </div>
   )
 }

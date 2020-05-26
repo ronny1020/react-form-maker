@@ -17,7 +17,7 @@ const formStyle = {
 }
 
 const formItems = [
-  { id: 'name', label: 'Name：', type: 'text' },
+  { id: 'name', label: 'Name：', type: 'text', defaultValue: 'test' },
   { id: 'account' },
   { id: 'phone', type: 'number' }
 ]
