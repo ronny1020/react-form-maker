@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-form-maker/static/css/main.b693b373.chunk.css",
+    "main.js": "/react-form-maker/static/js/main.6f4d6130.chunk.js",
+    "main.js.map": "/react-form-maker/static/js/main.6f4d6130.chunk.js.map",
+    "runtime-main.js": "/react-form-maker/static/js/runtime-main.66769bf6.js",
+    "runtime-main.js.map": "/react-form-maker/static/js/runtime-main.66769bf6.js.map",
+    "static/js/2.54d4520b.chunk.js": "/react-form-maker/static/js/2.54d4520b.chunk.js",
+    "static/js/2.54d4520b.chunk.js.map": "/react-form-maker/static/js/2.54d4520b.chunk.js.map",
+    "index.html": "/react-form-maker/index.html",
+    "precache-manifest.2974e91f710701f386dcf6e5e52a10d4.js": "/react-form-maker/precache-manifest.2974e91f710701f386dcf6e5e52a10d4.js",
+    "service-worker.js": "/react-form-maker/service-worker.js",
+    "static/css/main.b693b373.chunk.css.map": "/react-form-maker/static/css/main.b693b373.chunk.css.map",
+    "static/js/2.54d4520b.chunk.js.LICENSE.txt": "/react-form-maker/static/js/2.54d4520b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.66769bf6.js",
+    "static/js/2.54d4520b.chunk.js",
+    "static/css/main.b693b373.chunk.css",
+    "static/js/main.6f4d6130.chunk.js"
+  ]
+}
