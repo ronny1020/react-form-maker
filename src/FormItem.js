@@ -66,10 +66,10 @@ export const FormItem = (props) => {
   switch (attributes.type) {
     case 'select': {
       const optionTags = attributes.options.map((option, i) => {
-        const tag = option.tag ? option.tag : option.value
+        const text = option.text ? option.text : option.value
         return (
           <option key={i} {...option}>
-            {tag}
+            {text}
           </option>
         )
       })

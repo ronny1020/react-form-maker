@@ -18,7 +18,8 @@ const formItems = [
   {
     id: 'gender',
     type: 'select',
-    options: [{ value: 'male', tag: 'Male' }, { value: 'female' }]
+    formGroupClassName: 'form-group mb-5',
+    options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
   },
   {
     value: 'Submit',

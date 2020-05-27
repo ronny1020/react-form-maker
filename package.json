@@ -4,7 +4,10 @@
   "description": "make a react form faster by object",
   "author": "ronny1020",
   "license": "MIT",
-  "repository": "ronny1020/react-form-maker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronny1020/react-form-maker.git"
+  },
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -49,5 +52,30 @@
   },
   "files": [
     "dist"
+  ],
+  "bugs": {
+    "url": "https://github.com/ronny1020/react-form-maker/issues"
+  },
+  "homepage": "https://github.com/ronny1020/react-form-maker#readme",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {},
+  "keywords": [
+    "form",
+    "react-form-maker",
+    "react",
+    "form-creator",
+    "form creator",
+    "form-builder",
+    "form builder",
+    "react-form-creator",
+    "react form creator",
+    "react-form-builder",
+    "react form builder",
+    "react-form",
+    "react form",
+    "form-builder",
+    "form builder"
   ]
 }
