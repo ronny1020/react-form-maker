@@ -14,7 +14,7 @@ And you still can set className, style and so on for any pairs.
 ## Install
 
 ```bash
-npm install --save react-form-maker
+npm i react-form-maker
 ```
 
 ## Usage
@@ -51,14 +51,12 @@ const formItems = [
 
 const App = () => {
   return (
-    <>
-      <ReactFormMaker
-        className='container'
-        header={<h1>react-form-maker demo</h1>}
-        formItems={formItems}
-        formClassName={formClassName}
-      />
-    </>
+    <ReactFormMaker
+      className='container'
+      header={<h1>react-form-maker demo</h1>}
+      formItems={formItems}
+      formClassName={formClassName}
+    />
   )
 }
 
