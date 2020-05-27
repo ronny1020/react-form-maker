@@ -89,6 +89,11 @@ export const FormItem = (props) => {
         </div>
       )
     }
+
+    case ('button', 'submit'): {
+      return <input {...attributes} />
+    }
+
     default:
       return (
         <div className={formGroupClassName} style={formGroupStyle}>

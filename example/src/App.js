@@ -14,10 +14,16 @@ const formItems = [
   { id: 'name', label: 'Name：', type: 'text', defaultValue: 'test' },
   { id: 'account' },
   { id: 'phone', type: 'number' },
+  { id: 'birthday', type: 'date' },
   {
     id: 'gender',
     type: 'select',
     options: [{ value: 'male', tag: 'Male' }, { value: 'female' }]
+  },
+  {
+    value: 'Submit',
+    type: 'submit',
+    className: 'btn btn-primary'
   }
 ]
 
