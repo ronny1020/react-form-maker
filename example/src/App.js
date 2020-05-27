@@ -10,29 +10,26 @@ const formClassName = {
   inputClassName: 'form-control'
 }
 
-const formStyle = {
-  formGroupStyle: {},
-  labelStyle: {},
-  inputStyle: {}
-}
-
 const formItems = [
   { id: 'name', label: 'Name：', type: 'text', defaultValue: 'test' },
   { id: 'account' },
-  { id: 'phone', type: 'number' }
+  { id: 'phone', type: 'number' },
+  {
+    id: 'gender',
+    type: 'select',
+    options: [{ value: 'male', tag: 'Male' }, { value: 'female' }]
+  }
 ]
 
 const App = () => {
   return (
     <>
-      <div className='container'>
-        <h1>react-form-maker demo</h1>
-        <ReactFormMaker
-          formItems={formItems}
-          formClassName={formClassName}
-          formStyle={formStyle}
-        />
-      </div>
+      <ReactFormMaker
+        className='container'
+        header={<h1>react-form-maker demo</h1>}
+        formItems={formItems}
+        formClassName={formClassName}
+      />
     </>
   )
 }

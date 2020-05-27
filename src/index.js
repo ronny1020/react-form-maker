@@ -13,5 +13,11 @@ export const ReactFormMaker = (props) => {
     />
   ))
 
-  return <form>{formItems}</form>
+  return (
+    <form {...props}>
+      {props.header}
+      {formItems}
+      {props.footer}
+    </form>
+  )
 }

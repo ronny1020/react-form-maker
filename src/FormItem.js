@@ -5,50 +5,106 @@ export const FormItem = (props) => {
   const formClassName = props.formClassName
   const formStyle = props.formStyle
 
-  if (attributes.type === undefined) attributes.type = 'text'
-  if (attributes.label === undefined) attributes.label = attributes.id
+  if (!attributes.type) attributes.type = 'text'
+  if (!attributes.label) attributes.label = attributes.id
 
   // className or style in attributes have priority than in the formClassName or formStyle
-  const formGroupClassName = attributes.formGroupClassName
-    ? attributes.formGroupClassName
-    : formClassName.formGroupClassName
-  const formGroupStyle = attributes.formGroupStyle
-    ? attributes.formGroupStyle
-    : formStyle.formGroupStyle
+  let formGroupClassName
+  if (attributes.formGroupClassName) {
+    formGroupClassName = attributes.formGroupClassName
+  } else {
+    if (formClassName)
+      if (formClassName.formGroupClassName)
+        formGroupClassName = formClassName.formGroupClassName
+  }
 
-  const labelClassName = attributes.labelClassName
-    ? attributes.labelClassName
-    : formClassName.labelClassName
-  const labelStyle = attributes.labelStyle
-    ? attributes.labelStyle
-    : formStyle.labelStyle
+  let formGroupStyle
+  if (attributes.formGroupStyle) {
+    formGroupStyle = attributes.formGroupStyle
+  } else {
+    if (formStyle)
+      if (formStyle.formGroupStyle)
+        formGroupStyle = formClassName.formGroupStyle
+  }
+
+  let labelClassName
+  if (attributes.labelClassName) {
+    labelClassName = attributes.labelClassName
+  } else {
+    if (formClassName)
+      if (formClassName.labelClassName)
+        labelClassName = formClassName.labelClassName
+  }
+
+  let labelStyle
+  if (attributes.labelStyle) {
+    labelStyle = attributes.labelStyle
+  } else {
+    if (formStyle)
+      if (formStyle.labelStyle) labelStyle = formClassName.labelStyle
+  }
 
   let inputClassName
-  if (attributes.inputClassName === undefined) {
-    inputClassName = formClassName.inputClassName
-  } else {
+  if (attributes.inputClassName) {
     inputClassName = attributes.inputClassName
     delete attributes.inputClassName
+  } else {
+    if (formClassName)
+      if (formClassName.inputClassName)
+        inputClassName = formClassName.inputClassName
   }
 
   let inputStyle
-  if (attributes.inputStyle === undefined) {
-    inputStyle = formClassName.inputStyle
-  } else {
+  if (attributes.inputStyle) {
     inputStyle = attributes.inputStyle
     delete attributes.inputStyle
+  } else {
+    if (formStyle)
+      if (formStyle.inputStyle) inputStyle = formClassName.inputStyle
   }
 
-  return (
-    <div className={formGroupClassName} style={formGroupStyle}>
-      <label
-        className={labelClassName}
-        style={labelStyle}
-        htmlFor={attributes.id}
-      >
-        {attributes.label}
-      </label>
-      <input {...attributes} className={inputClassName} style={inputStyle} />
-    </div>
-  )
+  switch (attributes.type) {
+    case 'select': {
+      const optionTags = attributes.options.map((option, i) => {
+        const tag = option.tag ? option.tag : option.value
+        return (
+          <option key={i} {...option}>
+            {tag}
+          </option>
+        )
+      })
+
+      return (
+        <div className={formGroupClassName} style={formGroupStyle}>
+          <label
+            className={labelClassName}
+            style={labelStyle}
+            htmlFor={attributes.id}
+          >
+            {attributes.label}
+          </label>
+          <select {...attributes} className={inputClassName} style={inputStyle}>
+            {optionTags}
+          </select>
+        </div>
+      )
+    }
+    default:
+      return (
+        <div className={formGroupClassName} style={formGroupStyle}>
+          <label
+            className={labelClassName}
+            style={labelStyle}
+            htmlFor={attributes.id}
+          >
+            {attributes.label}
+          </label>
+          <input
+            {...attributes}
+            className={inputClassName}
+            style={inputStyle}
+          />
+        </div>
+      )
+  }
 }
