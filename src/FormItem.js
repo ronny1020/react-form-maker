@@ -12,6 +12,7 @@ export const FormItem = (props) => {
   let formGroupClassName
   if (attributes.formGroupClassName) {
     formGroupClassName = attributes.formGroupClassName
+    delete attributes.formGroupClassName
   } else {
     if (formClassName)
       if (formClassName.formGroupClassName)
@@ -21,6 +22,7 @@ export const FormItem = (props) => {
   let formGroupStyle
   if (attributes.formGroupStyle) {
     formGroupStyle = attributes.formGroupStyle
+    delete attributes.formGroupStyle
   } else {
     if (formStyle)
       if (formStyle.formGroupStyle)
@@ -30,6 +32,7 @@ export const FormItem = (props) => {
   let labelClassName
   if (attributes.labelClassName) {
     labelClassName = attributes.labelClassName
+    delete attributes.labelClassName
   } else {
     if (formClassName)
       if (formClassName.labelClassName)
@@ -39,6 +42,7 @@ export const FormItem = (props) => {
   let labelStyle
   if (attributes.labelStyle) {
     labelStyle = attributes.labelStyle
+    delete attributes.labelStyle
   } else {
     if (formStyle)
       if (formStyle.labelStyle) labelStyle = formClassName.labelStyle

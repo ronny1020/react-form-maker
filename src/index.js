@@ -12,9 +12,15 @@ export const ReactFormMaker = (props) => {
       formStyle={formStyle}
     />
   ))
+  const propsCopy = { ...props }
+  delete propsCopy.formClassName
+  delete propsCopy.formStyle
+  delete propsCopy.formItems
+  delete propsCopy.header
+  delete propsCopy.footer
 
   return (
-    <form {...props}>
+    <form {...propsCopy}>
       {props.header}
       {formItems}
       {props.footer}
