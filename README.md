@@ -129,7 +129,7 @@ if you use button or submit, there would be no div of formGroup.
 - other attributes
   Those Would be the attributes of <input>
 
-- {type:selection}
+- {type:select}
   Use (options : array) to create list of <option>
   In options use Object to create each <option>, which contain key value & text.
   Key of 'text' would be the text in <option></option>, the default is the defined "value"
