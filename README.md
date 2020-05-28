@@ -38,9 +38,24 @@ const formItems = [
   { id: 'phone', type: 'number' },
   { id: 'birthday', type: 'date' },
   {
+    type: 'radio',
+    name: 'framework',
+
+    radioClassName: 'form-check-input',
+    radioGroupClassName: 'form-check',
+    radioLabelClassName: 'form-check-label',
+    options: [
+      { value: 'React' },
+      { value: 'Angular' },
+      { value: 'Vue', text: 'Vue.js' }
+    ]
+  },
+  {
     id: 'gender',
     type: 'select',
-    options: [{ value: 'male', tag: 'Male' }, { value: 'female' }]
+    formGroupClassName: 'form-group mb-5',
+
+    options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
   },
   {
     value: 'Submit',
@@ -51,12 +66,14 @@ const formItems = [
 
 const App = () => {
   return (
-    <ReactFormMaker
-      className='container'
-      header={<h1>react-form-maker demo</h1>}
-      formItems={formItems}
-      formClassName={formClassName}
-    />
+    <>
+      <ReactFormMaker
+        className='container'
+        header={<h1>react-form-maker demo</h1>}
+        formItems={formItems}
+        formClassName={formClassName}
+      />
+    </>
   )
 }
 
@@ -87,60 +104,76 @@ if you use button or submit, there would be no div of formGroup.
 
 ## Attributes
 
-- formClassName : Object
-  formGroupClassName: string (className of the formGroup)
-  labelClassName:string (className of the label)
-  inputClassName:string (className of the input)
+##### formClassName : Object
 
-- formStyle : Object
-  formGroupStyle: Object (style of the formGroup)
-  labelStyle: Object (style of the label)
-  inputStyle: Object (style of the input)
+formGroupClassName: string (className of the formGroup)
+labelClassName:string (className of the label)
+inputClassName:string (className of the input)
 
-  Ps.The way to write the ClassName and style is the way you write in JSX
+##### formStyle : Object
 
-- formItems : Object
-  For more detail, please read the next section.
+formGroupStyle: Object (style of the formGroup)
+labelStyle: Object (style of the label)
+inputStyle: Object (style of the input)
 
-- header : JSX
-  Add any content before the formItems by JSX.
+Ps.The way to write the ClassName and style is the way you write in JSX
 
-- footer : JSX
-  Add any content after the formItems by JSX.
+##### formItems : Object
 
-- other attributes
-  Those Would be the attributes of <form>
+For more detail, please read the next section.
+
+##### header : JSX
+
+Add any content before the formItems by JSX.
+
+##### footer : JSX
+
+Add any content after the formItems by JSX.
+
+##### other attributes
+
+Those Would be the attributes of <form>
 
 ## formItems
 
-- id : string
-  This is the id of the <input> and the htmlFor of the <label>
+##### id : string
 
-- label : string
-  The text in the <label></label>
-  The default is the defined "id"
+This is the id of the <input> and the htmlFor of the <label>
 
-- formGroupClassName: string (className of the formGroup)
-- labelClassName:string (className of the label)
-- inputClassName:string (className of the input)
-- formGroupStyle: Object (style of the formGroup)
-- labelStyle: Object (style of the label)
-- inputStyle: Object (style of the input)
+##### label : string
 
-  Ps.The way to write the ClassName and style is the way you write in JSX
-  "className" or "style" in formItems have priority than in the formClassName or formStyle
+The text in the <label></label>
+The default is the defined "id"
 
-- other attributes
-  Those Would be the attributes of <input>
+##### formGroupClassName: string (className of the formGroup)
 
-- {type:select}
-  Use (options : array) to create list of <option>
-  In options use Object to create each <option>, which contain key value & text.
-  Key of 'text' would be the text in <option></option>, the default is the defined "value"
+##### labelClassName:string (className of the label)
 
-- {type:button}
-  If you use button or submit, there would be no div of formGroup.
-  Simply use "className" or "style" to change the style.
+##### inputClassName:string (className of the input)
+
+##### formGroupStyle: Object (style of the formGroup)
+
+##### labelStyle: Object (style of the label)
+
+##### inputStyle: Object (style of the input)
+
+Ps.The way to write the ClassName and style is the way you write in JSX
+"className" or "style" in formItems have priority than in the formClassName or formStyle
+
+##### other attributes
+
+Those Would be the attributes of <input>
+
+##### {type:select}
+
+Use (options : array) to create list of <option>
+In options use Object to create each <option>, which contain key value & text.
+Key of 'text' would be the text in <option></option>, the default is the defined "value"
+
+##### {type:button}
+
+If you use button or submit, there would be no div of formGroup.
+Simply use "className" or "style" to change the style.
 
 ## License
 

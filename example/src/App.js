@@ -16,9 +16,23 @@ const formItems = [
   { id: 'phone', type: 'number' },
   { id: 'birthday', type: 'date' },
   {
+    type: 'radio',
+    name: 'framework',
+
+    radioClassName: 'form-check-input',
+    radioGroupClassName: 'form-check',
+    radioLabelClassName: 'form-check-label',
+    options: [
+      { value: 'React' },
+      { value: 'Angular' },
+      { value: 'Vue', text: 'Vue.js' }
+    ]
+  },
+  {
     id: 'gender',
     type: 'select',
     formGroupClassName: 'form-group mb-5',
+
     options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
   },
   {

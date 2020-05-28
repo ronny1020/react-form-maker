@@ -6,7 +6,8 @@ export const FormItem = (props) => {
   const formStyle = props.formStyle
 
   if (!attributes.type) attributes.type = 'text'
-  if (!attributes.label) attributes.label = attributes.id
+  if (!attributes.label && attributes.id) attributes.label = attributes.id
+  if (!attributes.label && attributes.name) attributes.label = attributes.name
 
   // className or style in attributes have priority than in the formClassName or formStyle
   let formGroupClassName
@@ -77,6 +78,7 @@ export const FormItem = (props) => {
           </option>
         )
       })
+      delete attributes.options
 
       return (
         <div className={formGroupClassName} style={formGroupStyle}>
@@ -90,6 +92,61 @@ export const FormItem = (props) => {
           <select {...attributes} className={inputClassName} style={inputStyle}>
             {optionTags}
           </select>
+        </div>
+      )
+    }
+
+    case 'radio': {
+      const optionTags = attributes.options.map((option, i) => {
+        const text = option.text ? option.text : option.value
+        const id = option.id ? option.id : option.value
+        delete option.text
+        delete option.id
+        return (
+          <div
+            className={attributes.radioGroupClassName}
+            style={attributes.radioGroupStyle}
+            key={i}
+          >
+            <input
+              id={id}
+              type='radio'
+              className={attributes.radioClassName}
+              style={attributes.radioStyle}
+              name={attributes.name}
+              {...option}
+            />
+            <label
+              htmlFor={id}
+              className={attributes.radioLabelClassName}
+              style={attributes.radioLabelStyle}
+            >
+              {text}
+            </label>
+          </div>
+        )
+      })
+      delete attributes.options
+
+      delete attributes.radioClassName
+      delete attributes.radioGroupClassName
+      delete attributes.radioLabelClassName
+      delete attributes.radioStyle
+      delete attributes.radioGroupStyle
+      delete attributes.radioLabelStyle
+
+      return (
+        <div className={formGroupClassName} style={formGroupStyle}>
+          <label className={labelClassName} style={labelStyle}>
+            {attributes.label}
+          </label>
+          <div
+            {...attributes}
+            style={inputStyle}
+            className={attributes.inputClassName}
+          >
+            {optionTags}
+          </div>
         </div>
       )
     }
