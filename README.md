@@ -66,14 +66,12 @@ const formItems = [
 
 const App = () => {
   return (
-    <>
-      <ReactFormMaker
-        className='container'
-        header={<h1>react-form-maker demo</h1>}
-        formItems={formItems}
-        formClassName={formClassName}
-      />
-    </>
+    <ReactFormMaker
+      className='container'
+      header={<h1>react-form-maker demo</h1>}
+      formItems={formItems}
+      formClassName={formClassName}
+    />
   )
 }
 
