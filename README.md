@@ -104,13 +104,13 @@ if you use button or submit, there would be no div of formGroup.
 
 ## Attributes
 
-##### formClassName : Object
+#### formClassName : Object
 
 formGroupClassName: string (className of the formGroup)
 labelClassName:string (className of the label)
 inputClassName:string (className of the input)
 
-##### formStyle : Object
+#### formStyle : Object
 
 formGroupStyle: Object (style of the formGroup)
 labelStyle: Object (style of the label)
@@ -118,59 +118,59 @@ inputStyle: Object (style of the input)
 
 Ps.The way to write the ClassName and style is the way you write in JSX
 
-##### formItems : Object
+#### formItems : Object
 
 For more detail, please read the next section.
 
-##### header : JSX
+#### header : JSX
 
 Add any content before the formItems by JSX.
 
-##### footer : JSX
+#### footer : JSX
 
 Add any content after the formItems by JSX.
 
-##### other attributes
+#### other attributes
 
 Those Would be the attributes of <form>
 
 ## formItems
 
-##### id : string
+#### id : string
 
 This is the id of the <input> and the htmlFor of the <label>
 
-##### label : string
+#### label : string
 
 The text in the <label></label>
 The default is the defined "id"
 
-##### formGroupClassName: string (className of the formGroup)
+#### formGroupClassName: string (className of the formGroup)
 
-##### labelClassName:string (className of the label)
+#### labelClassName:string (className of the label)
 
-##### inputClassName:string (className of the input)
+#### inputClassName:string (className of the input)
 
-##### formGroupStyle: Object (style of the formGroup)
+#### formGroupStyle: Object (style of the formGroup)
 
-##### labelStyle: Object (style of the label)
+#### labelStyle: Object (style of the label)
 
-##### inputStyle: Object (style of the input)
+#### inputStyle: Object (style of the input)
 
 Ps.The way to write the ClassName and style is the way you write in JSX
 "className" or "style" in formItems have priority than in the formClassName or formStyle
 
-##### other attributes
+#### other attributes
 
 Those Would be the attributes of <input>
 
-##### {type:select}
+#### {type:select}
 
 Use (options : array) to create list of <option>
 In options use Object to create each <option>, which contain key value & text.
 Key of 'text' would be the text in <option></option>, the default is the defined "value"
 
-##### {type:button}
+#### {type:button}
 
 If you use button or submit, there would be no div of formGroup.
 Simply use "className" or "style" to change the style.
