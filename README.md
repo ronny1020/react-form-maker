@@ -197,6 +197,17 @@ Other properties would be the attributes of input, such as "defaultChecked:true"
 If you use button or submit, there would be no div of formGroup.
 Simply use "className" or "style" to change the style.
 
+#### {type:div}
+
+Create <div></div> ,and anything could be insert into it by property "child".
+Any other property would be the attributes of the div.
+
+## getReactFormData(formItems)
+
+This function could get the date of <ReactFormMaker /> form.
+The "formItems" should be the formItems used by <ReactFormMaker />.
+The return is Object with key: value pair. If there is a name in formItem, the key would be the "name" property. Otherwise, the key would be the "id" property.
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

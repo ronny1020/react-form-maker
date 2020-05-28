@@ -1,5 +1,8 @@
 import React from 'react'
 import { FormItem } from './FormItem'
+import { getReactFormData } from './actions/getReactFormData'
+
+export { getReactFormData }
 
 export const ReactFormMaker = (props) => {
   const formClassName = props.formClassName

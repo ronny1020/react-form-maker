@@ -1,6 +1,6 @@
 {
   "name": "react-form-maker",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "make a react form faster by object",
   "author": "ronny1020",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && npm install && npm run build",
+    "predeploy": "cd example && npm run build",
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {

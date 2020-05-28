@@ -69,6 +69,13 @@ export const FormItem = (props) => {
   }
 
   switch (attributes.type) {
+    case 'div': {
+      const child = props.formItemAttributes.child
+      delete attributes.type
+      delete attributes.child
+      return <div {...attributes}>{child}</div>
+    }
+
     case 'select': {
       const optionTags = attributes.options.map((option, i) => {
         const text = option.text ? option.text : option.value
