@@ -23,7 +23,7 @@ const formItems = [
     radioGroupClassName: 'form-check',
     radioLabelClassName: 'form-check-label',
     options: [
-      { value: 'React' },
+      { value: 'React', defaultChecked: true },
       { value: 'Angular' },
       { value: 'Vue', text: 'Vue.js' }
     ]

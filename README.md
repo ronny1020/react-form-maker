@@ -170,10 +170,36 @@ Use (options : array) to create list of <option>
 In options use Object to create each <option>, which contain key value & text.
 Key of 'text' would be the text in <option></option>, the default is the defined "value"
 
+#### {type:radio}
+
+Use (options : array) to create list of following components
+
+```jsx
+<div>
+  <input type='radio' />
+  <label>{text}</label>
+</div>
+```
+
+Like inputGroup, the outer <div> would be radioGroup.
+Use property "radioGroupClassName" or "radioGroupStyle" to change the radioGroup style.
+Use property "radioClassName" or "radioStyle" to change the radio style.
+Use property "radioLabelClassName" or "radioLabelStyle" to change the label style.
+
+##### The "options" property of {type:radio}
+
+"text" property is the text of the label, the default is the defined "value".
+Like inputGroup, "id" would be used to the id of input and the htmlFor of label, the default is also the defined "value" .
+Other properties would be the attributes of input, such as "defaultChecked:true"
+
 #### {type:button}
 
 If you use button or submit, there would be no div of formGroup.
 Simply use "className" or "style" to change the style.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 
