@@ -22,7 +22,7 @@ npm i react-form-maker
 ```jsx
 import React from 'react'
 
-import { ReactFormMaker } from 'react-form-maker'
+import { ReactFormMaker, getReactFormData } from 'react-form-maker'
 import 'react-form-maker/dist/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -45,11 +45,12 @@ const formItems = [
     radioGroupClassName: 'form-check',
     radioLabelClassName: 'form-check-label',
     options: [
-      { value: 'React' },
+      { value: 'React', defaultChecked: true },
       { value: 'Angular' },
       { value: 'Vue', text: 'Vue.js' }
     ]
   },
+
   {
     id: 'gender',
     type: 'select',
@@ -57,6 +58,7 @@ const formItems = [
 
     options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
   },
+  { type: 'div', className: 'm-5', child: <hr /> },
   {
     value: 'Submit',
     type: 'submit',
@@ -71,6 +73,11 @@ const App = () => {
       header={<h1>react-form-maker demo</h1>}
       formItems={formItems}
       formClassName={formClassName}
+      onSubmit={(event) => {
+        event.preventDefault()
+        const data = getReactFormData(formItems)
+        console.log(data)
+      }}
     />
   )
 }
