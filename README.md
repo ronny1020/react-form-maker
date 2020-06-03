@@ -84,8 +84,6 @@ export default App
 
 ```
 
-Ps. I
-
 ## Demo
 
 [Demo](https://ronny1020.github.io/react-form-maker/)
