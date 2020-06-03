@@ -4,9 +4,6 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.5.0",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1",
     "react": "file:../node_modules/react",
     "react-dom": "file:../node_modules/react-dom",
     "react-form-maker": "file:..",

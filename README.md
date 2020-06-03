@@ -6,7 +6,7 @@
 
 ## Why this?
 
-In my opinion, It takes a lot of time on dealing with make pairs with <label> & <input> when creating a form setting the id & htmlFor.
+In my opinion, It takes a lot of time on dealing with make pairs with `<label>` & `<input>` when creating a form setting the id & htmlFor.
 Moreover, usually, the pairs would share the same className or style.
 so, why not use a tool to deal with them.
 And you still can set className, style and so on for any pairs.
@@ -23,8 +23,6 @@ npm i react-form-maker
 import React from 'react'
 
 import { ReactFormMaker, getReactFormData } from 'react-form-maker'
-import 'react-form-maker/dist/index.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const formClassName = {
   formGroupClassName: 'form-group',
@@ -40,7 +38,6 @@ const formItems = [
   {
     type: 'radio',
     name: 'framework',
-
     radioClassName: 'form-check-input',
     radioGroupClassName: 'form-check',
     radioLabelClassName: 'form-check-label',
@@ -50,14 +47,15 @@ const formItems = [
       { value: 'Vue', text: 'Vue.js' }
     ]
   },
-
   {
     id: 'gender',
     type: 'select',
     formGroupClassName: 'form-group mb-5',
-
     options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
   },
+  'test1',
+  'test2',
+  'test3',
   { type: 'div', className: 'm-5', child: <hr /> },
   {
     value: 'Submit',
@@ -83,18 +81,21 @@ const App = () => {
 }
 
 export default App
+
 ```
+
+Ps. I
 
 ## Demo
 
 [Demo](https://ronny1020.github.io/react-form-maker/)
 
 Bootstrap is used for demo, however, this module don't dependency on Bootstrap.
-It's Not necessary to use Bootstrap.
+It's **NOT** necessary to use Bootstrap.
 
 ## Basic knowledge
 
-for most of the <label> & <input> pair of formItem would be like:
+for most of the `<label>` & `<input>` pair of formItem would be like:
 
 ```jsx
 <div>
@@ -123,7 +124,7 @@ inputStyle: Object (style of the input)
 
 Ps.The way to write the ClassName and style is the way you write in JSX
 
-#### formItems : Object
+#### formItems : Array
 
 For more detail, please read the next section.
 
@@ -137,17 +138,20 @@ Add any content after the formItems by JSX.
 
 #### other attributes
 
-Those Would be the attributes of <form>
+Those Would be the attributes of `<form>`
 
 ## formItems
 
+For item in array of formItems, use type of object or string.
+If it's a string, it would be equal to {id:'string'}
+
 #### id : string
 
-This is the id of the <input> and the htmlFor of the <label>
+This is the id of the `<input>` and the htmlFor of the `<label>`
 
 #### label : string
 
-The text in the <label></label>
+The text in the `<label></label>`
 The default is the defined "id"
 
 #### formGroupClassName: string (className of the formGroup)
@@ -167,13 +171,13 @@ Ps.The way to write the ClassName and style is the way you write in JSX
 
 #### other attributes
 
-Those Would be the attributes of <input>
+Those Would be the attributes of `<input>`
 
 #### {type:select}
 
-Use (options : array) to create list of <option>
-In options use Object to create each <option>, which contain key value & text.
-Key of 'text' would be the text in <option></option>, the default is the defined "value"
+Use (options : array) to create list of `<option>`
+In options use Object to create each `<option>`, which contain key value & text.
+Key of 'text' would be the text in `<option></option>`, the default is the defined "value"
 
 #### {type:radio}
 
@@ -186,7 +190,7 @@ Use (options : array) to create list of following components
 </div>
 ```
 
-Like inputGroup, the outer <div> would be radioGroup.
+Like inputGroup, the outer `<div>` would be radioGroup.
 Use property "radioGroupClassName" or "radioGroupStyle" to change the radioGroup style.
 Use property "radioClassName" or "radioStyle" to change the radio style.
 Use property "radioLabelClassName" or "radioLabelStyle" to change the label style.
@@ -204,13 +208,13 @@ Simply use "className" or "style" to change the style.
 
 #### {type:div}
 
-Create <div></div> ,and anything could be insert into it by property "child".
+Create `<div></div>` ,and anything could be insert into it by property "child".
 Any other property would be the attributes of the div.
 
 ## getReactFormData(formItems)
 
-This function could get the date of <ReactFormMaker /> form.
-The "formItems" should be the formItems used by <ReactFormMaker />.
+This function could get the date of `<ReactFormMaker />` form.
+The "formItems" should be the formItems used by `<ReactFormMaker />`.
 The return is Object with key: value pair. If there is a name in formItem, the key would be the "name" property. Otherwise, the key would be the "id" property.
 
 ## Contributing

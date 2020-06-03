@@ -1,8 +1,6 @@
 import React from 'react'
 
 import { ReactFormMaker, getReactFormData } from 'react-form-maker'
-import 'react-form-maker/dist/index.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 const formClassName = {
   formGroupClassName: 'form-group',
@@ -18,7 +16,6 @@ const formItems = [
   {
     type: 'radio',
     name: 'framework',
-
     radioClassName: 'form-check-input',
     radioGroupClassName: 'form-check',
     radioLabelClassName: 'form-check-label',
@@ -28,14 +25,14 @@ const formItems = [
       { value: 'Vue', text: 'Vue.js' }
     ]
   },
-
   {
     id: 'gender',
     type: 'select',
     formGroupClassName: 'form-group mb-5',
-
     options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
   },
+  'test1',
+  'test2',
   { type: 'div', className: 'm-5', child: <hr /> },
   {
     value: 'Submit',

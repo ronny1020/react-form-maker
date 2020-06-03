@@ -1,7 +1,11 @@
 import React from 'react'
 
 export const FormItem = (props) => {
-  const attributes = props.formItemAttributes
+  const attributes =
+    typeof props.formItemAttributes === 'string'
+      ? { id: props.formItemAttributes }
+      : props.formItemAttributes
+
   const formClassName = props.formClassName
   const formStyle = props.formStyle
 
