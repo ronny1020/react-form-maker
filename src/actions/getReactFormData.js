@@ -2,13 +2,13 @@ export const getReactFormData = (formItems) => {
   const data = {}
   formItems.forEach((item) => {
     switch (item.type) {
+      case ('button', 'submit', 'div'):
+        break
+
       case 'radio':
         data[item.name] = document.querySelector(
           `input[name="${item.name}"]:checked`
         ).value
-        break
-
-      case ('button', 'submit'):
         break
 
       case 'checkbox':
