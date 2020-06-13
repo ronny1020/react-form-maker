@@ -82,6 +82,7 @@ export const FormItem = (props) => {
 
     case 'select': {
       const optionTags = attributes.options.map((option, i) => {
+        if (typeof option === 'string') option = { value: option }
         const text = option.text ? option.text : option.value
         return (
           <option key={i} {...option}>
@@ -109,6 +110,7 @@ export const FormItem = (props) => {
 
     case 'radio': {
       const optionTags = attributes.options.map((option, i) => {
+        if (typeof option === 'string') option = { value: option }
         const text = option.text ? option.text : option.value
         const id = option.id ? option.id : option.value
         delete option.text

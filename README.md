@@ -43,7 +43,7 @@ const formItems = [
     radioLabelClassName: 'form-check-label',
     options: [
       { value: 'React', defaultChecked: true },
-      { value: 'Angular' },
+      'Angular',
       { value: 'Vue', text: 'Vue.js' }
     ]
   },
@@ -51,11 +51,10 @@ const formItems = [
     id: 'gender',
     type: 'select',
     formGroupClassName: 'form-group mb-5',
-    options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
+    options: [{ value: 'male', text: 'Male' }, 'female']
   },
   'test1',
   'test2',
-  'test3',
   { type: 'div', className: 'm-5', child: <hr /> },
   {
     value: 'Submit',
@@ -81,7 +80,6 @@ const App = () => {
 }
 
 export default App
-
 ```
 
 ## Demo
@@ -164,8 +162,8 @@ The default is the defined "id"
 
 #### inputStyle: Object (style of the input)
 
-Ps.The way to write the ClassName and style is the way you write in JSX
-"className" or "style" in formItems have priority than in the formClassName or formStyle
+Ps.The way to write the ClassName and style is the way you write in JSX.
+"className" or "style" in formItems have priority than in the formClassName or formStyle.
 
 #### other attributes
 
@@ -173,13 +171,15 @@ Those Would be the attributes of `<input>`
 
 #### {type:select}
 
-Use (options : array) to create list of `<option>`
-In options use Object to create each `<option>`, which contain key value & text.
+Use (options : array) to create list of `<option>`.
+In options use Object or string to create each `<option>`, which contain key value & text.
+If type of string is used, that would be equal to `{value:'string'}`
 Key of 'text' would be the text in `<option></option>`, the default is the defined "value"
 
 #### {type:radio}
 
-Use (options : array) to create list of following components
+Use (options : array) to create list of following components.
+If type of string is used, that would be equal to `{value:'string'}`.
 
 ```jsx
 <div>

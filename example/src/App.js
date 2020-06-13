@@ -21,7 +21,7 @@ const formItems = [
     radioLabelClassName: 'form-check-label',
     options: [
       { value: 'React', defaultChecked: true },
-      { value: 'Angular' },
+      'Angular',
       { value: 'Vue', text: 'Vue.js' }
     ]
   },
@@ -29,7 +29,7 @@ const formItems = [
     id: 'gender',
     type: 'select',
     formGroupClassName: 'form-group mb-5',
-    options: [{ value: 'male', text: 'Male' }, { value: 'female' }]
+    options: [{ value: 'male', text: 'Male' }, 'female']
   },
   'test1',
   'test2',
